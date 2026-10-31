@@ -1,0 +1,19 @@
+{
+  "name": "himallens",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Point your phone at the Himalaya and see which peak is which.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "fetch-peaks": "node scripts/fetch-peaks.ts"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7",
+    "vitest": "^4.1.12"
+  }
+}

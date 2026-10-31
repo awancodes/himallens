@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Point your phone at the Himalaya and see which peak is which." />
+    <title>HimalLens</title>
+  </head>
+  <body>
+    <header>
+      <h1>Himal<span>Lens</span></h1>
+      <select id="viewpoint" aria-label="Viewpoint"></select>
+      <select id="range" aria-label="How far to look">
+        <option value="100">within 100 km</option>
+        <option value="200" selected>within 200 km</option>
+        <option value="300">within 300 km</option>
+      </select>
+      <button id="lang" type="button">नेपाली</button>
+    </header>
+    <canvas id="sky"></canvas>
+    <footer>
+      <span id="status"></span>
+      <span>Drag to look around · scroll to zoom · Peak data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a></span>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

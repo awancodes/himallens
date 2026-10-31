@@ -1,0 +1,86 @@
+:root {
+  --bg: #08142a;
+  --panel: rgba(8, 20, 42, 0.92);
+  --text: #eef3fa;
+  --muted: #9fb3cc;
+  --accent: #ffd166;
+  font-family: system-ui, 'Nirmala UI', 'Noto Sans Devanagari', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 8px 16px;
+  background: var(--panel);
+}
+
+h1 {
+  margin: 0 8px 0 0;
+  font-size: 18px;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+select,
+button {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: #16294a;
+  border: 1px solid #2c4670;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#sky {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  touch-action: none;
+  cursor: grab;
+}
+
+#sky:active {
+  cursor: grabbing;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--panel);
+}
+
+footer a {
+  color: var(--muted);
+}
