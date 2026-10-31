@@ -9,6 +9,7 @@ const canvas = document.querySelector<HTMLCanvasElement>('#sky')!;
 const ctx = canvas.getContext('2d')!;
 const viewpointSelect = document.querySelector<HTMLSelectElement>('#viewpoint')!;
 const rangeSelect = document.querySelector<HTMLSelectElement>('#range')!;
+const minHeightSelect = document.querySelector<HTMLSelectElement>('#minHeight')!;
 const langButton = document.querySelector<HTMLButtonElement>('#lang')!;
 const status = document.querySelector<HTMLElement>('#status')!;
 
@@ -24,7 +25,9 @@ function currentViewpoint() {
 }
 
 function recompute() {
-  seen = peaksFrom(currentViewpoint(), allPeaks, Number(rangeSelect.value) * 1000);
+  // Filter by height AFTER the hidden-peak check: a smaller hill can still block a big peak.
+  const minHeight = Number(minHeightSelect.value);
+  seen = peaksFrom(currentViewpoint(), allPeaks, Number(rangeSelect.value) * 1000).filter((p) => p.ele >= minHeight);
   requestDraw();
 }
 
@@ -54,6 +57,7 @@ viewpointSelect.addEventListener('change', () => {
   recompute();
 });
 rangeSelect.addEventListener('change', recompute);
+minHeightSelect.addEventListener('change', recompute);
 langButton.addEventListener('click', () => {
   view.lang = view.lang === 'en' ? 'ne' : 'en';
   langButton.textContent = view.lang === 'en' ? 'नेपाली' : 'English';
